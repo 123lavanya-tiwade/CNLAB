@@ -1,0 +1,53 @@
+Part A: DNS Analysis Using CMD Commands
+1. Press Windows + R.
+2. Type cmd and press Enter.
+3. Type ipconfig and press Enter to check the IP configuration.
+4. Type ipconfig /all to view detailed network information and DNS server address.
+5. Type nslookup google.com to find the IP address of Google.
+6. Type nslookup youtube.com to find the IP address of YouTube.
+7. Type ipconfig /displaydns to display the DNS cache.
+8. Type ipconfig /flushdns to clear the DNS cache.
+9. Observe the output of each command.
+
+Part B: DNS Configuration Using Cisco Packet Tracer
+1. Open Cisco Packet Tracer.
+2. Drag one Server, one 2960 Switch and two PCs (PC0 and PC1) into the workspace.
+3. Select Copper Straight-Through cable.
+4. Connect PC0 to Switch, PC1 to Switch and Server to Switch.
+5. Click Server → Desktop → IP Configuration.
+6. Enter the following details:
+   - IP Address: 192.168.1.1
+   - Subnet Mask: 255.255.255.0
+7. Click Server → Services → DNS.
+8. Turn DNS Service ON.
+9. Enter the following details:
+   - Name: www.google.com
+   - Address: 192.168.1.1
+10. Click Add.
+11. Click PC0 → Desktop → IP Configuration.
+12. Enter:
+- IP Address: 192.168.1.2
+- Subnet Mask: 255.255.255.0
+- DNS Server: 192.168.1.1
+13. Click PC1 → Desktop → IP Configuration.
+14. Enter:
+- IP Address: 192.168.1.3
+- Subnet Mask: 255.255.255.0
+- DNS Server: 192.168.1.1
+15. Click PC0 → Desktop → Command Prompt.
+16. Type ping www.google.com and press Enter.
+17. Observe the DNS name resolution and ping response.
+Part C: DNS Packet Analysis in Simulation Mode
+1. Click Simulation Mode at the bottom-right corner.
+2. Click Edit Filters.
+3. Select DNS and ICMP protocols.
+4. Open PC0 → Desktop → Command Prompt.
+5. Type ping www.google.com.
+6. Click Capture/Forward to observe packet movement.
+7. Observe the DNS request travelling from PC0 to the DNS Server.
+8. Observe the DNS response travelling from the DNS Server to PC0.
+9. Click the DNS packet envelope in the Event List.
+10. Open the PDU Information window.
+11. Check the OSI Model and Inbound/Outbound PDU Details.
+12. Observe the source IP, destination IP, DNS query, DNS response and port number 53.
+13. Record the observations.
